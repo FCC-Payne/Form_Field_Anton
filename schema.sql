@@ -16,9 +16,9 @@ CREATE TABLE `dresses` (
   `average_review_rating` DECIMAL(3,2),
   `total_reviews` INTEGER,
   `price_4days` DECIMAL(5,2),
-  `stylist_notes` BLOB,
-  `size_and_fit` BLOB,
-  `product_details` BLOB,
+  `stylist_notes` VARCHAR(1000),
+  `size_and_fit` VARCHAR(1000),
+  `product_details` VARCHAR(1000),
   `facebook_likes` INTEGER,
   `price_drop_off_percentage` INTEGER,
   `image_url` VARCHAR(200),
@@ -56,11 +56,11 @@ CREATE TABLE `rental_time` (
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE `sizes` ADD FOREIGN KEY (product_id) REFERENCES `dresses` (`id`);
-ALTER TABLE `rental_time` ADD FOREIGN KEY (dress_id) REFERENCES `dresses` (`id`);
-ALTER TABLE `rental_time` ADD FOREIGN KEY (size_id) REFERENCES `sizes` (`id`);
+ALTER TABLE sizes ADD FOREIGN KEY (product_id) REFERENCES dresses (id);
+ALTER TABLE rental_time ADD FOREIGN KEY (dress_id) REFERENCES dresses (id);
+ALTER TABLE rental_time ADD FOREIGN KEY (size_id) REFERENCES sizes (id);
 
---insert data into dresses table
+
 insert into dresses (id, company_name, name, retail_price, price_4days, average_review_rating, total_reviews, stylist_notes, size_and_fit, product_details, facebook_likes, price_drop_off_percentage) values (1, 'Funk Inc', 'congue risus semper porta', 561, 35, 2.67, 822, 'Integer a nibh. In quis justo. Maecenas rhoncus aliquam lacus.', 'Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.', 'Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa.', 32, 26);
 insert into dresses (id, company_name, name, retail_price, price_4days, average_review_rating, total_reviews, stylist_notes, size_and_fit, product_details, facebook_likes, price_drop_off_percentage) values (2, 'Murphy-Kessler', 'luctus tincidunt nulla mollis molestie', 288, 77, 3.43, 230, 'Integer ac neque. Duis bibendum.', 'Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum.', 'Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.', 97, 17);
 insert into dresses (id, company_name, name, retail_price, price_4days, average_review_rating, total_reviews, stylist_notes, size_and_fit, product_details, facebook_likes, price_drop_off_percentage) values (3, 'Schaefer and Sons', 'libero convallis eget eleifend', 327, 62, 3.77, 733, 'Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat.', 'Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis. Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat.', 'Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus. Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.', 11, 36);
@@ -162,7 +162,7 @@ insert into dresses (id, company_name, name, retail_price, price_4days, average_
 insert into dresses (id, company_name, name, retail_price, price_4days, average_review_rating, total_reviews, stylist_notes, size_and_fit, product_details, facebook_likes, price_drop_off_percentage) values (99, 'Kuhn and Sons', 'in hac habitasse platea', 448, 50, 3.52, 271, 'Praesent blandit.', 'Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.', 'Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.', 11, 39);
 insert into dresses (id, company_name, name, retail_price, price_4days, average_review_rating, total_reviews, stylist_notes, size_and_fit, product_details, facebook_likes, price_drop_off_percentage) values (100, 'Klocko, Turner and Hane', 'in felis eu sapien cursus', 257, 29, 3.83, 514, 'Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci.', 'Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'Phasellus in felis.', 73, 39);
 
---insert date into sizes table
+
 insert into sizes (id, size, quantity, product_id) values (1, 0, 2, 1);
 insert into sizes (id, size, quantity, product_id) values (2, 2, 2, 1);
 insert into sizes (id, size, quantity, product_id) values (3, 4, 1, 1);
@@ -805,7 +805,7 @@ insert into sizes (id, size, quantity, product_id) values (638, '''M''', 3, 100)
 insert into sizes (id, size, quantity, product_id) values (639, '''L''', 0, 100);
 insert into sizes (id, size, quantity, product_id) values (640, '''XL''', 3, 100);
 
---insert data into rental_time table
+
 insert into rental_time (id, warehouse_sent, client_arrived, client_sent, warehouse_arrived, dress_id, size_id) values (1, '2018-08-10', '2018-08-12 16:42:14', '2018-08-20 16:42:14', '2018-08-22 16:42:14', 38, 264);
 insert into rental_time (id, warehouse_sent, client_arrived, client_sent, warehouse_arrived, dress_id, size_id) values (2, '2018-06-21', '2018-06-23 09:21:09', '2018-07-01 09:21:09', '2018-07-03 09:21:09', 31, 217);
 insert into rental_time (id, warehouse_sent, client_arrived, client_sent, warehouse_arrived, dress_id, size_id) values (3, '2018-08-31', '2018-09-02 11:15:33', '2018-09-10 11:15:33', '2018-09-12 11:15:33', 36, 252);
