@@ -1,0 +1,74 @@
+.header {
+	display: block;
+}
+.top {
+}
+.company_name {
+	font-size: 28px;
+    font-family: Genath-Regular, serif;
+    font-weight: inherit;
+    line-height: 1.2em;
+    display: inline;
+}
+.dress_name {
+	font-family: ProximaNova-Regular, Proxima-Nova, sans-serif;
+    font-size: 13px;
+    zoom: 1;
+    float: left;
+    position: relative;
+    margin-bottom: 14px;
+}
+.heart {
+	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
+    background-position: 44.73684210526316% 61.64053075995175%;
+    width: 24px;
+    height: 20px;
+    content: " ";
+    display: inline-block;
+    margin-right: 1ex;
+    vertical-align: middle;
+}
+.full_heart {
+	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
+    background-position: 47.60765550239235% 61.64053075995175%;
+    width: 24px;
+    height: 20px;
+    content: " ";
+    display: inline-block;
+    margin-right: 1ex;
+    vertical-align: middle;
+}
+.heart_button {
+	border: 0;
+    color: transparent;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    width: 50px;
+    background: none;
+}
+.retail_price {
+	zoom: 1;
+    float: left;
+    position: relative;
+    display: block;
+    clear: both;
+    height: 0;
+}
+.average_review {
+	display: block;
+}
+.total_reviews {
+	display: block;
+}
+body {
+	margin: 0;
+    font-style: normal;
+    font-family: Genath-Regular, serif;
+    font-size: 15px;
+    line-height: 20px;
+    color: #333333;
+}

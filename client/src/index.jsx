@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Header from './Header.jsx';
+import ProductDetails from './ProductDetails';
 
 
 class App extends React.Component{
@@ -23,16 +25,17 @@ class App extends React.Component{
   			dressInfo: data.dressInfo,
   			dressSizes: data.sizes
   		});
-  		console.log(this.state.dressInfo.image_url);
   	});
   }
   componentDidMount(){
-  	this.getDressInfo(11);
+  	this.getDressInfo(19);
   }
   render(){
-    return(<div>Hi!!
-    	<img width="200" src= {this.state.dressInfo.image_url} />
-    	</div>
+    return(
+      <div>
+        <Header dressInfo = {this.state.dressInfo}/>
+        <ProductDetails dressInfo = {this.state.dressInfo}/>
+      </div>
     );
   }
 }
