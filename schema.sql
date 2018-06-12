@@ -9,47 +9,47 @@ DROP TABLE IF EXISTS `sizes`;
 DROP TABLE IF EXISTS `dresses`;
     
 CREATE TABLE `dresses` (
-  `id` INTEGER AUTO_INCREMENT,
-  `company_name` VARCHAR(50),
-  `name` VARCHAR(200),
-  `retail_price` DECIMAL(5,2),
-  `average_review_rating` DECIMAL(3,2),
-  `total_reviews` INTEGER,
-  `price_4days` DECIMAL(5,2),
-  `stylist_notes` VARCHAR(1000),
-  `size_and_fit` VARCHAR(1000),
-  `product_details` VARCHAR(1000),
-  `facebook_likes` INTEGER,
-  `price_drop_off_percentage` INTEGER,
-  `image_url` VARCHAR(200),
-  PRIMARY KEY (`id`)
+  id INTEGER AUTO_INCREMENT,
+  company_name VARCHAR(50),
+  name VARCHAR(200),
+  retail_price DECIMAL(5,2),
+  average_review_rating DECIMAL(3,2),
+  total_reviews INTEGER,
+  price_4days DECIMAL(5,2),
+  stylist_notes VARCHAR(1000),
+  size_and_fit VARCHAR(1000),
+  product_details VARCHAR(1000),
+  facebook_likes INTEGER,
+  price_drop_off_percentage INTEGER,
+  image_url VARCHAR(200),
+  PRIMARY KEY (id)
 );
 
 -- ---
 -- Table 'sizes'
 -- All sizes available(numbers and letters)
 -- --- 
-CREATE TABLE `sizes` (
-  `id` INTEGER AUTO_INCREMENT,
-  `size` VARCHAR(5),
-  `quantity` INTEGER,
-  `product_id` INTEGER,
-  PRIMARY KEY (`id`)
+CREATE TABLE sizes (
+  id INTEGER AUTO_INCREMENT,
+  size VARCHAR(5),
+  quantity INTEGER,
+  product_id INTEGER,
+  PRIMARY KEY (id)
 );
 
 -- ---
 -- Table 'rental_time'
 -- Rental time for dress
 -- ---   
-CREATE TABLE `rental_time` (
-  `id` INTEGER AUTO_INCREMENT,
-  `warehouse_sent` DATE,
-  `client_arrived` DATETIME,
-  `client_sent` DATETIME,
-  `warehouse_arrived` DATETIME,
-  `dress_id` INTEGER,
-  `size_id` INTEGER,
-  PRIMARY KEY (`id`)
+CREATE TABLE rental_time (
+  id INTEGER AUTO_INCREMENT,
+  warehouse_sent DATE,
+  client_arrived DATETIME,
+  client_sent DATETIME,
+  warehouse_arrived DATETIME,
+  dress_id INTEGER,
+  size_id INTEGER,
+  PRIMARY KEY (id)
 );
 
 -- ---id, warehouse_sent, client_arrived, client_sent, warehouse_arrived, dress_id, size_id

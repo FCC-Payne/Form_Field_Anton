@@ -5,19 +5,19 @@ class FormInput extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      isVisible: false
+      modalIsVisible: false
     };
     this.openCalendarModal = this.openCalendarModal.bind(this);
     this.closeCalendarModal = this.closeCalendarModal.bind(this);
   }
   openCalendarModal () {
     this.setState({
-      isVisible: true
+      modalIsVisible: true
     });
   }
   closeCalendarModal () {
     this.setState({
-      isVisible: false
+      modalIsVisible: false
     });
   }
 
@@ -46,7 +46,7 @@ class FormInput extends React.Component {
         <div className="formButtonSizeAndFit">
           <button className="buttonSizeAndFit" onClick={this.openCalendarModal}>Size & Fit</button>
         </div>
-        <ModalSizeAndFit dressInfo={this.props.dressInfo} isVisible={this.state.isVisible} closeCalendarModal={this.closeCalendarModal} />
+        <ModalSizeAndFit dressInfo={this.props.dressInfo} isVisible={this.state.modalIsVisible} closeCalendarModal={this.closeCalendarModal} />
         <legend className="formName">Delivery + Return Dates</legend>
         <div className="rentalDays">
           <div>

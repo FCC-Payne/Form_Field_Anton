@@ -17,11 +17,12 @@ class App extends React.Component {
   }
 
   componentDidMount () {
-    this.getDressInfo(25);
+    const path = document.location.pathname.slice(1, 3);
+    this.getDressInfo(path);
   }
   getDressInfo (dressId) {
     $.ajax({
-      url: `http://localhost:3003/${dressId}`,
+      url: `http://localhost:3003/info/${dressId}`,
       contentType: 'application/json'
 
     }).done((data) => {
