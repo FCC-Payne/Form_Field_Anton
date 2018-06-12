@@ -5,43 +5,42 @@ import Header from './Header.jsx';
 import ProductDetails from './ProductDetails.jsx';
 import FormInput from './FormInput.jsx';
 
-
-class App extends React.Component{
-  constructor(props) {
+class App extends React.Component {
+  constructor (props) {
     super(props);
     this.state = {
-    	dressInfo: {},
-    	dressSizes: {},
+      dressInfo: {},
+      dressSizes: {}
     };
 
     this.getDressInfo = this.getDressInfo.bind(this);
   }
-  getDressInfo(dressId){
-  	$.ajax({
-  		url: 'http://localhost:3003/' + dressId,
-  		contentType: "application/json",
 
-  	}).done((data) => {
-  		data = JSON.parse(data);
-  		this.setState({
-  			dressInfo: data.dressInfo,
-  			dressSizes: data.sizes
-  		});
-  		console.log(this.state.dressInfo.average_review_rating)
-  	});
+  componentDidMount () {
+    this.getDressInfo(25);
   }
-  componentDidMount(){
-  	this.getDressInfo(25);
+  getDressInfo (dressId) {
+    $.ajax({
+      url: `http://localhost:3003/${dressId}`,
+      contentType: 'application/json'
+
+    }).done((data) => {
+      const newData = JSON.parse(data);
+      this.setState({
+        dressInfo: newData.dressInfo,
+        dressSizes: newData.sizes
+      });
+    });
   }
-  render(){
-    return(
+  render () {
+    return (
       <div>
-        <Header dressInfo = {this.state.dressInfo}/>
-        <FormInput dressInfo = {this.state.dressInfo}/>
-        <ProductDetails dressInfo = {this.state.dressInfo}/>
+        <Header dressInfo={this.state.dressInfo} />
+        <FormInput dressInfo={this.state.dressInfo} />
+        <ProductDetails dressInfo={this.state.dressInfo} />
       </div>
     );
   }
 }
 
-ReactDOM.render(<App/>, document.getElementById("app"));
+ReactDOM.render(<App />, document.getElementById('app'));
