@@ -361,6 +361,11 @@
   text-align: center;
   margin: 25px 0;
 }
+.moduleSize {
+	position: relative;
+  width: 426px;
+  float: right;
+}
 
 body {
 	margin: 0;

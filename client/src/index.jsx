@@ -35,7 +35,7 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className="moduleSize">
         <Header dressInfo={this.state.dressInfo} />
         <FormInput dressInfo={this.state.dressInfo} dressSizes={this.state.dressSizes} />
         <ProductDetails dressInfo={this.state.dressInfo} />
