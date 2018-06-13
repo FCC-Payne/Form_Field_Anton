@@ -352,6 +352,15 @@
   padding: 0 30px;
   text-transform: uppercase;
 }
+.calendarTitle {
+	font-family: Genath-Regular, serif;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0;
+  text-transform: none;
+  text-align: center;
+  margin: 25px 0;
+}
 
 body {
 	margin: 0;
