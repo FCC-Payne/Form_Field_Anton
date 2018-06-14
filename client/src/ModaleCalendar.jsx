@@ -1,10 +1,12 @@
 import React from 'react';
+//import Calendar from 'react-calendar';
 
 class ModalCalendar extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      topClass: 'modalContainer invisible'
+      topClass: 'modalContainer invisible',
+      date: new Date(),
     };
     this.close = this.close.bind(this);
   }
@@ -27,7 +29,7 @@ class ModalCalendar extends React.Component {
     });
   }
   render() {
-  	return(
+    return(
       <div className={this.state.topClass}>
         <div className="modalContent">
           <button className="closeButtonSizeAndFit" onClick={this.close} />
