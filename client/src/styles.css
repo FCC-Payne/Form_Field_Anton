@@ -375,16 +375,17 @@
   margin: 25px 0;
 }
 .moduleSize {
-	position: relative;
-  width: 426px;
-  float: right;
+
 }
 
-body {
+.formInputBody {
 	margin: 0;
   font-style: normal;
   font-family: Genath-Regular, serif;
   font-size: 15px;
   line-height: 20px;
   color: #333333;
+  position: relative;
+  width: 426px;
+  float: right;
 }
