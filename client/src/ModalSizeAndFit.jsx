@@ -25,7 +25,7 @@ class ModalSizeAndFit extends React.Component {
     this.setState({
       topClass: 'modalContainer invisible'
     });
-    this.props.closeCalendarModal();
+    this.props.closeSizeAndFitModal();
   }
   render () {
     return (
