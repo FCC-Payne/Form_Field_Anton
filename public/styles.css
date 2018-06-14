@@ -72,6 +72,9 @@
 }
 .stars2 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
+	background-position: 53.56679636835279% 26.410564225690276%;
+  width: 89px;
+  height: 16px;
 }
 .stars3 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
@@ -81,6 +84,9 @@
 }
 .stars4 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
+	background-position: 53.56679636835279% 24.489795918367346%;
+  width: 89px;
+  height: 16px;
 }
 .stars5 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
@@ -90,6 +96,9 @@
 }
 .stars6 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
+  background-position: 24.38391699092088% 21.728691476590637%;
+  width: 89px;
+  height: 16px;
 }
 .stars7 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
@@ -106,11 +115,15 @@
 .stars9 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
 	background-position: 48.76783398184176% 44.29771908763505%;
-    width: 89px;
-    height: 16px;
+  width: 89px;
+  height: 16px;
 }
 .stars10 {
 	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
+  background-position: 24.38391699092088% 23.649459783913567%;
+  width: 89px;
+  height: 16px;
+
 }
 
 .total_reviews {
@@ -250,7 +263,7 @@
 }
 .formButtonSizeAndFit {
 	text-align: right;
-    padding: 10px 0 0;
+  padding: 10px 0 0;
 }
 .modalContainer {
 	position: fixed;
