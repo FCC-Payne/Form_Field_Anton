@@ -1,4 +1,5 @@
 import React from 'react';
+
 import style from './styles.css';
 
 class ModalCalendar extends React.Component {
@@ -27,8 +28,8 @@ class ModalCalendar extends React.Component {
       topClass: `${style.modalContainer} ${style.invisible}`
     });
   }
-  render () {
-  	return (
+  render() {
+    return(
       <div className={this.state.topClass}>
       <div className={style.modalContent}>
           <button className={style.closeButtonSizeAndFit} onClick={this.close} />
