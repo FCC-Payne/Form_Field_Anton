@@ -17,6 +17,14 @@ module.exports = {
         query: {
           presets: ['react', 'es2015']
        }
+      },
+      {
+        test: /\.css$/,
+        exclude : /mode_modules/,
+        loaders: [
+          'style-loader?sourceMap',
+          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]'
+        ]
       }
     ]
   }

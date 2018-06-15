@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Header from './Header.jsx';
 import ProductDetails from './ProductDetails.jsx';
 import FormInput from './FormInput.jsx';
+import style from './styles.css';
 
 class App extends React.Component {
   constructor (props) {
@@ -35,7 +36,7 @@ class App extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className={style.formInputBody}>
         <Header dressInfo={this.state.dressInfo} />
         <FormInput dressInfo={this.state.dressInfo} dressSizes={this.state.dressSizes} />
         <ProductDetails dressInfo={this.state.dressInfo} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import ModalSizeAndFit from './ModalSizeAndFit.jsx';
 import ModaleCalendar from './ModaleCalendar.jsx';
+import style from './styles.css';
 
 class FormInput extends React.Component {
   constructor (props) {
@@ -36,63 +37,60 @@ class FormInput extends React.Component {
   }
 
   createList () {
-    if (this.props.dressSizes.length > 0){
+    if (this.props.dressSizes.length > 0) {
       return this.props.dressSizes.map((size) => {
-        if (size.quantity === 0){
+        if (size.quantity === 0) {
           return (<option>{size.size} (Unavailable)</option>);
-        } else {
-          return (<option>{size.size}</option>);
         }
+        return (<option>{size.size}</option>);
       });
-    } else {
-      return null;
-  	}
+    }
+    return null;
   }
-
   render () {
-  	const sizeList = this.createList();
+    const sizeList = this.createList();
     return (
-      <div className="formInput">
-        <h4 className="waysToRent invisible">Chose a Way to Rent</h4>
-        <div className="forms">
-          <label className="formName">Zip Code</label>
-          <input className="zipCode" maxLength="5" />
+      <div className={style.formInput}>
+        <h4 className={`${style.waysToRent} ${style.invisible}`}>Chose a Way to Rent</h4>
+        <div className={style.forms}>
+          <label className={style.formName}>Zip Code</label>
+          <input className={style.zipCode} maxLength="5" />
         </div>
         <div>
-          <div className="forms">
-            <label className="formName">Size</label>
-            <select className="dressSizes">
+          <div className={style.forms}>
+            <label className={style.formName}>Size</label>
+            <select className={style.dressSizes}>
               <option>Select</option>
               {sizeList}
             </select>
           </div>
-          <div className="forms">
-            <label className="formName">Free Backup Size</label>
-            <select className="dressSizes">
+          <div className={style.forms}>
+            <label className={style.formName}>Free Backup Size</label>
+            <select className={style.dressSizes}>
               <option>Select</option>
               {sizeList}
             </select>
           </div>
         </div>
-        <div className="formButtonSizeAndFit">
-          <button className="buttonSizeAndFit" onClick={this.openSizeAndFitModal}>Size & Fit</button>
+        <div className={style.formButtonSizeAndFit}>
+          <button className={style.buttonSizeAndFit} onClick={this.openSizeAndFitModal}>Size & Fit</button>
         </div>
         <ModalSizeAndFit dressInfo={this.props.dressInfo} isVisible={this.state.modalSizeAndFitIsVisible} closeSizeAndFitModal={this.closeSizeAndFitModal} />
-        <legend className="formName">Delivery + Return Dates</legend>
-        <div className="rentalDays">
+        <legend className={style.formName}>Delivery + Return Dates</legend>
+        <div className={style.rentalDays}>
           <div>
-            <input type="radio" id="fourDays" className="inputRadio" />
-            <label className="formName">4-Day Rental</label>
+            <input type="radio" id="fourDays" className={style.inputRadio} />
+            <label className={style.formName}>4-Day Rental</label>
           </div>
           <div>
-            <input type="radio" id="eightDays" className="inputRadio" />
-            <label className="formName">8-Day Rental</label>
+            <input type="radio" id="eightDays" className={style.inputRadio} />
+            <label className={style.formName}>8-Day Rental</label>
           </div>
-          <input type="text" className="calendarInputs" readOnly onClick={this.openCalendarModal}/>
+          <input type="text" className={style.calendarInputs} readOnly onClick={this.openCalendarModal} />
           <ModaleCalendar isVisible={this.state.modaleCalendarIsVisible} closeCalendarModal={this.closeCalendarModal} />
         </div>
-        <span className="promo">25% off your first order with code WELCOME</span>
-        <button className="checkout">Add to Bag</button>
+        <span className={style.promo}>25% off your first order with code WELCOME</span>
+        <button className={style.checkout}>Add to Bag</button>
       </div>
     );
   }
