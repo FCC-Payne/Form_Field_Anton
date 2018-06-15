@@ -119,13 +119,11 @@
   height: 16px;
 }
 .stars10 {
-	background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
+  background: url(https://s3-us-west-1.amazonaws.com/fec-form-data/Rent_The_Runway.svg) no-repeat;
   background-position: 24.38391699092088% 23.649459783913567%;
   width: 89px;
   height: 16px;
-
 }
-
 .total_reviews {
 	display: block;
 }
@@ -240,26 +238,26 @@
 }
 .buttonSizeAndFit {
 	font-family: EngraversGothic BT, serif;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: inherit;
-    line-height: 100%;
-    padding-bottom: 2px;
-    border-bottom: 1px solid currentColor;
-    display: inline-block;
-    width: auto;
-    height: auto;
-    padding: 0;
-    font: inherit;
-    background: none;
-    border: 0;
-    cursor: pointer;
-    box-sizing: border-box;
-    align-items: flex-start;
-    text-align: center;
-    -webkit-writing-mode: horizontal-tb !important;
-    -webkit-appearance: button;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: inherit;
+  line-height: 100%;
+  padding-bottom: 2px;
+  border-bottom: 1px solid currentColor;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 0;
+  font: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  align-items: flex-start;
+  text-align: center;
+  -webkit-writing-mode: horizontal-tb !important;
+  -webkit-appearance: button;
 }
 .formButtonSizeAndFit {
 	text-align: right;

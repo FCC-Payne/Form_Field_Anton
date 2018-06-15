@@ -47,9 +47,8 @@ class FormInput extends React.Component {
     }
     return null;
   }
-
   render () {
-  	const sizeList = this.createList();
+    const sizeList = this.createList();
     return (
       <div className={style.formInput}>
         <h4 className={`${style.waysToRent} ${style.invisible}`}>Chose a Way to Rent</h4>
