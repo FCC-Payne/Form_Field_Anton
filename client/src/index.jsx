@@ -23,7 +23,7 @@ class App extends React.Component {
   }
   getDressInfo (dressId) {
     $.ajax({
-      url: `/forms/${dressId}`,
+      url: `http://localhost:3003/forms/${dressId}`,
       contentType: 'application/json',
       method: 'GET'
 
@@ -46,4 +46,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('forms'));
