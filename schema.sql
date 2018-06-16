@@ -2,6 +2,8 @@
 -- Table 'dresses'
 -- Main Dress Item
 -- ---
+CREATE DATABASE IF NOT EXISTS FECForms;
+
 DROP TABLE IF EXISTS `rental_time`;
 
 DROP TABLE IF EXISTS `sizes`;

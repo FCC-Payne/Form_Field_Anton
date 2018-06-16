@@ -11,7 +11,7 @@ const s3 = new AWS.S3({
 const connection = mysql.createConnection({
   user: 'root',
   password: config.dbPassword,
-  database: 'FEC'
+  database: 'FECForms'
 });
 
 const getDressInfo = function (dressId, cb) {
