@@ -9,17 +9,27 @@ const s3 = new AWS.S3({
 });
 
 const connection = mysql.createConnection({
-  user: 'root',
+  host: config.hosturldb,
+  user: config.userdb,
   password: config.dbPassword,
-  database: 'FECForms'
+  database: config.namedb,
+  port: config.port
 });
 
 const getDressInfo = function (dressId, cb) {
   const result = {};
+  console.log('trying to access database');
+  console.log('host: ' + config.hosturldb);
+  console.log('user: ' + config.userdb);
+  console.log('password: ' + config.dbPassword);
+  console.log('databse: ' + config.namedb);
+  console.log('port: ' + config.port);
   connection.query(`SELECT * FROM dresses WHERE id=${dressId};`, (err, data) => {
     if (err) {
       cb(err, null);
+      console.log(err);
     } else {
+      console.log('success');
       result.dressInfo = data[0];
       connection.query(`SELECT * FROM sizes WHERE product_id=${dressId};`, (err, data) => {
         if (err) {
@@ -31,8 +41,10 @@ const getDressInfo = function (dressId, cb) {
           				Key: `${numberToString(dressId)}.jpg`
           }, (err, data) => {
         				if (err) {
+                  console.log('error in s3');
         					cb(err, null);
         				} else {
+                  console.log('everything passed');
         					result.dressInfo.image_url = data;
         					cb(null, result);
         				}
